@@ -20,6 +20,49 @@ body {
   perspective: 1000px;
 }
 
+.image-container {
+  position: absolute; /* Posiciona o contêiner absolutamente */
+  top: 0; /* Alinha o contêiner ao topo da tela */
+  left: 50%; /* Centraliza horizontalmente em relação ao body */
+  transform: translateX(-50%); /* Ajusta o alinhamento centralizado */
+  width: 10%; /* Garante que o contêiner ocupe toda a largura da tela */
+  display: flex;
+  justify-content: center; /* Centraliza a imagem horizontalmente dentro do contêiner */
+  z-index: 101;
+  margin-top: 40px;
+  display: none;
+}
+
+.image-container img {
+  max-width: 100%; /* Ajusta o tamanho da imagem para caber no contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+  /* max-height: 300px; /* Descomente e ajuste se quiser limitar a altura da imagem */
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .image-container {
+    position: absolute; /* Posiciona o contêiner absolutamente */
+    top: 0; /* Alinha o contêiner ao topo da tela */
+    left: 50%; /* Centraliza horizontalmente em relação ao body */
+    transform: translateX(-50%); /* Ajusta o alinhamento centralizado */
+    width: 50%; /* Garante que o contêiner ocupe toda a largura da tela */
+    display: flex;
+    justify-content: center; /* Centraliza a imagem horizontalmente dentro do contêiner */
+    z-index: 101;
+    margin-top: 40px;
+    display: block;
+  }
+  
+  .image-container img {
+    max-width: 100%; /* Ajusta o tamanho da imagem para caber no contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    /* max-height: 300px; /* Descomente e ajuste se quiser limitar a altura da imagem */
+    display: block;
+  }
+}
+
+
 .score{
   position: fixed; /* Fixa o elemento no topo da tela */
   top: 50px;
@@ -45,7 +88,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Certifica-se de que está acima de todo o conteúdo */
+  z-index: 100; /* Certifica-se de que está acima de todo o conteúdo */
 }
 
 .question-container {
@@ -67,6 +110,7 @@ body {
   color: white;
   border-radius: 5px;
   margin-right: 5px;
+  margin-bottom: 20px;
 }
 
 .question-container #stop-btn {
@@ -100,6 +144,7 @@ body {
   color: white;
   border-radius: 5px;
   margin-right: 5px;
+  margin-bottom: 20px;
 }
 
 .question-container #stop-btn2 {
@@ -133,6 +178,7 @@ body {
   color: white;
   border-radius: 5px;
   margin-right: 5px;
+  margin-bottom: 20px;
 }
 
 .question-container #stop-btn3 {

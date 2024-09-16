@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const questionContainer1 = document.querySelector('#initial-screen .question-container');
   const questionContainer2 = document.getElementById('question-container-2');
   const questionContainer3 = document.getElementById('question-container-3');
+  const imageContainer = document.querySelector('.image-container'); // Novo elemento
   const scoreElement = document.querySelector('.score'); // Elemento que exibe o score
   let score = parseInt(scoreElement.textContent, 10); // Inicializa o score com o valor atual
 
@@ -61,6 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Remover a classe "container" do body
     document.body.classList.remove('container');
+
+    // Exibir a imagem após a conclusão das perguntas
+    imageContainer.style.display = 'block';
   });
 
   stopBtn3.addEventListener('click', () => {
