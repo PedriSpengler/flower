@@ -1,16 +1,12 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const audio = new Audio('./img/vouteflor.mp3');
-  audio.load();
+  const audio = new Audio();
+  audio.src = './img/vouteflor.mp3';
 
-  // Adiciona evento de toque e clique para iniciar a reprodução
   const playAudio = () => {
-      audio.play().then(() => {
-          console.log('Áudio reproduzindo');
-      }).catch(error => {
+      audio.play().catch(error => {
           console.error('Erro ao tentar reproduzir o áudio:', error);
       });
 
-      // Remove os eventos após a reprodução
       document.body.removeEventListener('click', playAudio);
       document.body.removeEventListener('touchstart', playAudio);
   };
@@ -18,6 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.body.addEventListener('click', playAudio);
   document.body.addEventListener('touchstart', playAudio);
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const initialScreen = document.getElementById('initial-screen');
